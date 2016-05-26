@@ -13,12 +13,14 @@ server.listen(port)
 function onRequest (req, res) {
 	let index = path.join(__dirname, 'public', 'index.html')
 
+	res.setHeader('Content-Type', 'text/html')
 	let rs = fs.createReadStream(index)
 	rs.pipe(res)
 
-	// rs.on('error', function () {
-
-	// })
+	rs.on('error', function () {
+		res.setHeader('Content-Type', 'text/plain')
+		res.end(err.message)
+	})
 
 } 
 

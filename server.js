@@ -11,15 +11,15 @@ server.on('listening', onListening)
 server.listen(port)
 
 function onRequest (req, res) {
-	let fileName = path.join(__dirname, 'public', 'index.html')
+	let index = path.join(__dirname, 'public', 'index.html')
 
-	fs.readFile(fileName, function (err, file) {
-		if (err){
-			return res.end(err.message)
-		} 
+	let rs = fs.createReadStream(index)
+	rs.pipe(res)
 
-		res.end(file)
-	})
+	// rs.on('error', function () {
+
+	// })
+
 } 
 
 function onListening () {

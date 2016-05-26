@@ -25,5 +25,5 @@ function onRequest (req, res) {
 } 
 
 function onListening () {
-	console.log('HTTP 200 on port ' + port)	
+	console.log(`HTTP 200 on port ${port}`)	
 }

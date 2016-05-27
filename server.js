@@ -1,55 +1,16 @@
 'use strict'
 
 const http = require('http')
-const fs = require('fs')
 const path = require('path')
-const port = process.env.PORT || 8080
+const router = require('./router')
 
 const server = http.createServer()
-server.on('request', onRequest)
+const port = process.env.PORT || 8080
+
+server.on('request', router)
 server.on('listening', onListening)
-server.listen(port)
 
-function onRequest (req, res) {
-	let uri = req.url
-
-	if (uri.startsWith('/index') || uri === '/') {
-		return serveIndex(res)
-	}
-
-	if (uri === '/app.js') {
-		return serveApp(res)
-	}
-
-	res.statusCode = 404
-	res.end(`404 not found: ${uri}`)
-} 
-
-function serveIndex (res) {
-	let index = path.join(__dirname, 'public', 'index.html')
-
-	res.setHeader('Content-Type', 'text/html')
-	let rs = fs.createReadStream(index)
-	rs.pipe(res)
-
-	rs.on('error', function () {
-		res.setHeader('Content-Type', 'text/plain')
-		res.end(err.message)
-	})
-}
-
-function serveApp (res) {
-	let app = path.join(__dirname, 'public', 'app.js')
-
-	res.setHeader('Content-Type', 'text/javascript')
-	let rs = fs.createReadStream(app)
-	rs.pipe(res)
-
-	rs.on('error', function () {
-		res.setHeader('Content-Type', 'text/plain')
-		res.end(err.message)
-	})
-}
+server.listen(port) 
 
 function onListening () {
 	console.log(`HTTP 200 on port ${port}`)	

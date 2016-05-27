@@ -9,6 +9,10 @@
   "author": "Raúl Nabarret <raulnabarret@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "st": "^1.1.0"
+    "st": "^1.1.0",
+    "webrtc2images": "^1.4.4"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1"
   }
 }

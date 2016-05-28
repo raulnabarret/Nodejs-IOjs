@@ -1,0 +1,83 @@
+commit 822eb4572b675e7db622987b009bc5395e69a72a
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Fri May 27 18:18:51 2016 -0500
+
+    Agregar course para el manejo de rutas
+
+commit 7eee2992a901b6a4eb28e53fc635e5a1f26ac757
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Fri May 27 17:59:20 2016 -0500
+
+    Soporte Browserify y permitir grabar vídeo en el cliente
+
+commit 93081352af461b0fca94c297effb6c324d40339c
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 19:42:56 2016 -0500
+
+    Separar funciones en archivo index.js
+
+commit 028bdad81508157dee634cf7a1cee0421d494ce6
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 19:16:11 2016 -0500
+
+    Servir archivo index.html y app.js a través de funciones
+
+commit 8208c2d01cf422652b52be7a44e14003e4189b52
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 18:56:59 2016 -0500
+
+    Usar template strings (ES6)
+
+commit 6e99b1ea6d521a6b70f5ae210297a6a627a47880
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 18:53:49 2016 -0500
+
+    Utilizar streams en fs
+
+commit 1ad0b73584592598739f24522ea6efd53dcfc3e4
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 18:51:14 2016 -0500
+
+    Utilizar streams en fs
+
+commit b6be7c402b3a25d7ca60caf962c05000476a74b8
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 18:39:41 2016 -0500
+
+    Utilizar path y fs asíncrono
+
+commit eaabc93381bab2c648fd30dc454ce7ca3c620615
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 17:48:21 2016 -0500
+
+    Cargar archivo estático index.html en el servidor
+
+commit b0d7c101af19dbe39fed0e8e9fdfe03411b5525e
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 17:16:09 2016 -0500
+
+    Refactor: Cambiar de callback a event emitter
+
+commit fcc9e4e608a5e8abfd5195180a7f91e6a5041839
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 17:11:12 2016 -0500
+
+    Refactor: Extraer callback a funciones
+
+commit 29ce00c2f10d0e47edde01cf80da2665624bb62a
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 17:07:53 2016 -0500
+
+    Agregar callback en el request y en el listen
+
+commit a3359ecb16c023468ddab1830262126a5f115301
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 16:55:59 2016 -0500
+
+    Crear servidor de la aplicación con nodejs/iojs
+
+commit 7d8fd4ebcdb4a2df66517ad4be1b986ae674a8a9
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Thu May 26 16:34:28 2016 -0500
+
+    Gitignore y package.json del proyecto

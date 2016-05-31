@@ -4,11 +4,14 @@
   "description": "real-time chat",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npm run build-js",
+    "build-js": "browserify client/app.js -o public/app.js",
+    "start": "node server.js"
   },
   "author": "Raúl Nabarret <raulnabarret@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "course": "0.0.1",
     "st": "^1.1.0",
     "webrtc2images": "^1.4.4"
   },

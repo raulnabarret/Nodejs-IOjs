@@ -1,3 +1,22 @@
+commit 759188447571a45ba64b22493ab97164db3eca8f
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Mon May 30 20:28:43 2016 -0500
+
+    Agregar scripts de npm para manejar el proyecto
+
+commit 60b6f1bc29e2cab30c0e087b8d707dfb702f0b07
+Merge: f5a024d 822eb45
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Fri May 27 19:17:22 2016 -0500
+
+    Regresar al estado estable anterior
+
+commit f5a024da353f7fb398534884d4ac70ba2f8d1df9
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Fri May 27 19:14:51 2016 -0500
+
+    Bitácora de commits al 27 de mayo de 2016
+
 commit 822eb4572b675e7db622987b009bc5395e69a72a
 Author: raulnabarret <raulnabarret@gmail.com>
 Date:   Fri May 27 18:18:51 2016 -0500

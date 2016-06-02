@@ -1,13 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 const domify = require('domify')
-const Webrtc2Images = require('webrtc2images')
 const io = require('socket.io-client')
-const messageTpl = require('./templates/message.hbs')
+const Webrtc2Images = require('webrtc2images')
 const uuid = require('uuid')
-
+const messageTpl = require('./templates/message.hbs')
 
 const socket = io.connect()
-const id = uuid.v4
+const id = uuid.v4()
 
 const rtc = new Webrtc2Images({
   width: 200,
@@ -28,12 +27,9 @@ const form = document.querySelector('form')
 form.addEventListener('submit', function (e) {
   e.preventDefault()
   record()
-
 }, false)
 
-socket.on('messages', function (messages) {
-  messages.forEach(addMessage)
-})
+socket.on('message', addMessage)
 
 socket.on('messageack', function (message) {
   if (message.id === id) {
@@ -41,7 +37,9 @@ socket.on('messageack', function (message) {
   }
 })
 
-socket.on('message', addMessage)
+socket.on('messages', function (messages) {
+  messages.forEach(addMessage)
+})
 
 function record () {
   const input = document.querySelector('input[name="message"]')
@@ -51,8 +49,7 @@ function record () {
   rtc.recordVideo(function (err, frames) {
     if (err) return logError(err)
 
-    socket.emit('message', { id: id, message: message, frames: frames })
-
+    socket.emit('message', { id:id, message: message, frames: frames })
   })
 }
 

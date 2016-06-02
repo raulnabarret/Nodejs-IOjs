@@ -1,12 +1,11 @@
 const domify = require('domify')
-const Webrtc2Images = require('webrtc2images')
 const io = require('socket.io-client')
-const messageTpl = require('./templates/message.hbs')
+const Webrtc2Images = require('webrtc2images')
 const uuid = require('uuid')
-
+const messageTpl = require('./templates/message.hbs')
 
 const socket = io.connect()
-const id = uuid.v4
+const id = uuid.v4()
 
 const rtc = new Webrtc2Images({
   width: 200,
@@ -27,12 +26,9 @@ const form = document.querySelector('form')
 form.addEventListener('submit', function (e) {
   e.preventDefault()
   record()
-
 }, false)
 
-socket.on('messages', function (messages) {
-  messages.forEach(addMessage)
-})
+socket.on('message', addMessage)
 
 socket.on('messageack', function (message) {
   if (message.id === id) {
@@ -40,7 +36,9 @@ socket.on('messageack', function (message) {
   }
 })
 
-socket.on('message', addMessage)
+socket.on('messages', function (messages) {
+  messages.forEach(addMessage)
+})
 
 function record () {
   const input = document.querySelector('input[name="message"]')
@@ -50,8 +48,7 @@ function record () {
   rtc.recordVideo(function (err, frames) {
     if (err) return logError(err)
 
-    socket.emit('message', { id: id, message: message, frames: frames })
-
+    socket.emit('message', { id:id, message: message, frames: frames })
   })
 }
 

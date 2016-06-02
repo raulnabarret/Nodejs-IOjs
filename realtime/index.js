@@ -2,7 +2,7 @@
 
 const socketio = require('socket.io')
 const helper = require('../helper')
-const database = require('./database')
+const database = require('../database')
 module.exports = function (server) {
 
 	const db = database()

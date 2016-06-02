@@ -1,7 +1,12 @@
-const xhr = require('xhr')
 const domify = require('domify')
 const Webrtc2Images = require('webrtc2images')
+const io = require('socket.io-client')
 const messageTpl = require('./templates/message.hbs')
+const uuid = require('uuid')
+
+
+const socket = io.connect()
+const id = uuid.v4
 
 const rtc = new Webrtc2Images({
   width: 200,
@@ -25,6 +30,13 @@ form.addEventListener('submit', function (e) {
 
 }, false)
 
+socket.on('message', addMessage)
+
+socket.on('messageack', function (message) {
+  if (message.id === id) {
+    addMessage(message)
+  }
+})
 
 function record () {
   const input = document.querySelector('input[name="message"]')
@@ -34,20 +46,7 @@ function record () {
   rtc.recordVideo(function (err, frames) {
     if (err) return logError(err)
 
-    xhr({
-      uri: '/process',
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ images: frames }),
-    }, function (err, res, body) {
-      if (err) return logError(err)
-
-      body = JSON.parse(body)
-
-      if (body.video) {
-        addMessage({ message: message, video: body.video })
-      }
-    })
+    socket.emit('message', { id: id, message: message, frames: frames })
 
   })
 }

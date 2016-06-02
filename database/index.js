@@ -19,7 +19,7 @@ module.exports = function (options) {
 	}
 
 	function list (callback) {
-
+		callback()
 	}
 
 	return {

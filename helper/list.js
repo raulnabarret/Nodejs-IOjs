@@ -4,17 +4,18 @@ const fs = require('fs')
 
 module.exports = function (folder, filter, callback) {
 
-	fs.readdir(folder, onReaddir)
+  fs.readdir(folder, onReaddir)
 
-	function onReaddir (err, results) {
-		if (err) return callback(err)
+  function onReaddir (err, results) {
+    if (err) return callback(err)
 
-		let files = results.filter(filterFiles)
-		
-		callback(null, files)
-	}
+    let files = results.filter(filterFiles)
 
-	function filterFiles (file) {
-		return file.startsWith(filter)
-	}
+    callback(null, files)
+  }
+
+  function filterFiles (file) {
+    return file.startsWith(filter)
+  }
+
 }

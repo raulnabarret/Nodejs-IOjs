@@ -30,13 +30,17 @@ form.addEventListener('submit', function (e) {
 
 }, false)
 
-socket.on('message', addMessage)
+socket.on('messages', function (messages) {
+  messages.forEach(addMessage)
+})
 
 socket.on('messageack', function (message) {
   if (message.id === id) {
     addMessage(message)
   }
 })
+
+socket.on('message', addMessage)
 
 function record () {
   const input = document.querySelector('input[name="message"]')

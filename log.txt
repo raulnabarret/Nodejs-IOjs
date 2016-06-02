@@ -1,3 +1,75 @@
+commit 9e5d792b6052772e641f731ae88003da344659ee
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Tue May 31 18:14:00 2016 -0500
+
+    Fusionar archivos locales con los cambios de los repositorios de Platzi
+
+commit 1104cba4eb544483cfd0e24ec087ac3dd71d90aa
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Tue May 31 17:48:03 2016 -0500
+
+    Fusionar archivos locales con los cambios de los repositorios de Platzi
+
+commit 5a2d69eb1249d15d111f5f03565b8f792745ae86
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Tue May 31 17:27:40 2016 -0500
+
+    Codificar vídeo en data-uri
+
+commit b2ef6a669a7d4d9c3d4511a10f43fb41d692c9d2
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Tue May 31 17:13:57 2016 -0500
+
+    Crear el módulo ffmpeg para creación de vídeo
+
+commit 7d1f2d6e7936267bfa5158b497ca11cef9b3e4d0
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Tue May 31 11:15:13 2016 -0500
+
+    Implementar eliminación de archivos
+
+commit 33adb39c20ca7c4652167a4cbbbe84ffae5ffbfa
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Tue May 31 11:05:17 2016 -0500
+
+    Crear modulo para listar y filtrar archivos para limpiar
+
+commit a4b5c29703bdc77599adb3dbcdb24ec000bab075
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Tue May 31 10:53:09 2016 -0500
+
+    Decodificar imágenes y guardarlas en disco
+
+commit 2b209e2bb08836cc8c2a5215013055e9990e611d
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Mon May 30 21:38:34 2016 -0500
+
+    Crear funciones base para conversión de vídeo con async
+
+commit 8b247d46a9f25af2470153f8609f7d889bcf61ab
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Mon May 30 21:15:32 2016 -0500
+
+    Crear helper para conversion de vídeo usando EventEmitter
+
+commit 3e7f190bbad3e488c5de2f4a4febfba419c0fe67
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Mon May 30 20:54:31 2016 -0500
+
+    Crear carpeta helper y archivo index.js para crear un event emitter
+
+commit 1633b45058dddeb8106495c4d6774d6d18ff7240
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Mon May 30 20:51:24 2016 -0500
+
+    Agregar ruta /process y enviar imágenes para procesamiento
+
+commit 937784308d06c3e036973237bb2533972987b7e8
+Author: raulnabarret <raulnabarret@gmail.com>
+Date:   Mon May 30 20:30:07 2016 -0500
+
+    Bitácora de commits al 30 de mayo de 2016
+
 commit 759188447571a45ba64b22493ab97164db3eca8f
 Author: raulnabarret <raulnabarret@gmail.com>
 Date:   Mon May 30 20:28:43 2016 -0500
